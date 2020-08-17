@@ -16,6 +16,6 @@ RUN apt update && apt upgrade -y && \
 RUN git clone https://github.com/rekcahkumar/javes2.0 /root/userbot
 RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
-RUN python3 -m pip install --no-warn-script-location --no-cache-dir --upgrade -r requirements.txt
+RUN python3 -m pip install --no-warn-script-location --no-cache-dir --upgrade setuptools wheel -r requirements.txt
 
 ENTRYPOINT ["python", "-m", "userbot"]
