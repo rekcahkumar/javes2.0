@@ -59,6 +59,7 @@ else:
 
 
 OWNER = {0}
+HEAD_AD = {0}
 COUNT_MSG = 0
 USERS = {}
 COUNT_PM = {}
