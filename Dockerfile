@@ -10,7 +10,7 @@ RUN apt update && apt upgrade -y && \
         libwebp-dev \
         linux-headers-amd64 \
         musl-dev \
-        neofetch \
+        neofetch 
     
 
 RUN git clone https://github.com/rekcahkumar/javes2.0 /root/userbot
