@@ -1,0 +1,21 @@
+FROM python:3.8-slim-buster
+RUN apt update && apt upgrade -y && \
+    apt install --no-install-recommends -y \
+        bash \
+        curl \
+        ffmpeg \
+        git \
+        libjpeg-dev \
+        libjpeg62-turbo-dev \
+        libwebp-dev \
+        linux-headers-amd64 \
+        musl-dev \
+        neofetch \
+    
+
+RUN git clone https://github.com/rekcah-pavi/javes /root/userbot
+RUN mkdir /root/userbot/bin/
+WORKDIR /root/userbot/
+RUN python3 -m pip install --no-warn-script-location --no-cache-dir --upgrade -r requirements.txt
+
+ENTRYPOINT ["python", "-m", "userbot"]

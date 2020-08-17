@@ -1,0 +1,37 @@
+{
+  "name": "Javes",
+  "description": "Javes is a Telegram userbot that running on Python , It help you to manage your telegram easily ",
+  "logo": "https://i.imgur.com/ATSG4w3.png",
+  "keywords": [
+    "telegram",
+    "userbot",
+    "plugin",
+    "modular",
+    "productivity"
+  ],
+  "repository": "https://t.me/javes05",
+  "website": "https://t.me/javes05",
+  "success_url": "https://t.me/rekcah05",
+  "stack": "container",
+  "env": {  
+    "TELEGRAM_STRING_SESSION": {
+      "description": "Get this value by running [python3 string_session.py] in Termux or heroku[IMPORTANT]"    
+    },
+    "HEROKU_APIKEY": {
+      "description": "very important for !update command to make javes up-to-date , get it from 'https://dashboard.heroku.com/account."
+    },
+    "HEROKU_APPNAME": {
+      "description": "enter this app name agin here, very inportant for !update comand to make javes up-to-date"
+    },
+    "BOT_TOKEN": {
+      "description": "BOTLOG_CHATID must be filled correct if you set it true"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+      }
+    }
+  ]
+}
