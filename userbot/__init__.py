@@ -13,7 +13,8 @@ from userbot.database.value_sql import get_all_sql
 basicConfig(format='[%(name)s]: %(message)s', level=INFO)
 LOGS = getLogger(__name__)
 
-BOTLOG = BOTLOG_CHATID = None
+LOGS.info ("Installing Sql Values Please  Wait.......")
+
 Sql = get_all_sql()                 
 for i in Sql:  
                if i.sqlvar == "BOTLOG_CHATID":
@@ -24,8 +25,28 @@ for i in Sql:
                    PM_PROTECTOR = i.sqlvalue
                if i.sqlvar == "BOTLOG":
                    BOTLOG = i.sqlvalue
-        
-
+               if i.sqlvar == "GENIUS_API_TOKEN":
+                   GENIUS_API_TOKEN = i.sqlvalue
+               if i.sqlvar == "OCR_SPACE_API_KEY":
+                   OCR_SPACE_API_KEY = i.sqlvalue
+               if i.sqlvar == "REM_BG_API_KEY":
+                   REM_BG_API_KEY = i.sqlvalue
+               if i.sqlvar == "LYDIA_API_KEY":
+                   LYDIA_API_KEY = i.sqlvalue
+               if i.sqlvar == "PM_MESSAGE":
+                   PM_MESSAGE = i.sqlvalue
+               if i.sqlvar == "SPAM_PROTECT":
+                   SPAM_PROTECT = i.sqlvalue
+               if i.sqlvar == "BLOCK_MESSAGE":
+                   BLOCK_MESSAGE = i.sqlvalue
+               if i.sqlvar == "COUNTRY":
+                   COUNTRY = i.sqlvalue
+               if i.sqlvar == "CLEAN_WELCOME":
+                   CLEAN_WELCOME = i.sqlvalue
+               if i.sqlvar == "AFK_MSG":
+                   AFK_MSG = i.sqlvalue
+   
+LOGS.info ("Successfully Installed \n Trying to connect Client.......")
 
 API_KEY = "1754367"
 API_HASH = "231b8cc6cca12ee51a85cf543321f476"
@@ -35,7 +56,6 @@ STRING_SESSION3 = os.environ.get("STRING_SESSION3", None)
 HEROKU_APPNAME = os.environ.get("HEROKU_APPNAME", None)
 HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
-
 
 
    
