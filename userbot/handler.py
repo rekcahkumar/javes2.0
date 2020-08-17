@@ -74,7 +74,7 @@ def J_Client(**args):
         del args['trigger_on_fwd']
     def decorator(func):
         async def wrapper(check):
-            if LOGSPAMMER:
+            if BOTLOG:
                 send_to = BOTLOG_CHATID
             if not trigger_on_fwd and check.fwd_from:
                 return
