@@ -12,6 +12,9 @@ RUN apt update && apt upgrade -y && \
         musl-dev \
         libpq-de \
         python-dev \
+        postgresql \
+        postgresql-client \
+        postgresql-server-dev-all \
         neofetch 
     
 
