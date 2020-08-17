@@ -7,6 +7,7 @@ from time import gmtime, strftime
 from traceback import format_exc
 from telethon import events
 from userbot import *
+from userbot.database.sudo_sql import get_all_sudo
 
 
 
