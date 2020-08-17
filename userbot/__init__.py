@@ -13,7 +13,7 @@ from userbot.database.value_sql import get_all_sql
 basicConfig(format='[%(name)s: %(message)s', level=INFO)
 LOGS = getLogger(__name__)
 
-
+BOTLOG = BOTLOG_CHATID = None
 Sql = get_all_sql()                 
 for i in Sql:  
                if i.sqlvar == "BOTLOG_CHATID":
