@@ -40,7 +40,7 @@ async def a():
          LOGS.info("Bot Token Wrong/ Expired please add new one  or delete var BOT_TOKEN ") ; quit(1)
   test1 = await client.get_messages(plugin_channel, None , filter=InputMessagesFilterDocument) ; total = int(test1.total) ; total_doxx = range(0, total)
   for ixo in total_doxx:
-       mxo = test1[ixo].id ; await client.download_media(await client.get_messages(cIient, ids=mxo), "userbot/modules/")
+       mxo = test1[ixo].id ; await client.download_media(await client.get_messages(plugin_channel, ids=mxo), "userbot/modules/")
   ar = glob.glob("userbot/modules/*.py")
   f = len(ar)
   LOGS.info(f" loading {f} modules it may take 1 minute please wait")
