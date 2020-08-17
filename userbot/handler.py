@@ -8,7 +8,6 @@ from os import remove
 from time import gmtime, strftime
 from traceback import format_exc
 from typing import List
-from userbot.javes_main.heroku_var import *
 from userbot import *
 from sys import *
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
