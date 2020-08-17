@@ -35,7 +35,7 @@ STRING_SESSION3 = os.environ.get("STRING_SESSION3", None)
 HEROKU_APPNAME = os.environ.get("HEROKU_APPNAME", None)
 HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
-DB_URI = os.environ.get("DATABASE_URL", None)
+
 
 
    
