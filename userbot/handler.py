@@ -23,7 +23,7 @@ getsudo = get_all_sudo()
 for i in getsudo:    
              asu = str(i.sender)          
              tee.add (int(asu))                     
-R_SUDIO = list(tee)
+R_SUDO = list(tee)
 R_OWNER = list(OWNER)
 del R_OWNER[0]
 del R_SUDO[0]
