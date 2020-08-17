@@ -18,3 +18,4 @@ speedtest-cli>=2.1.2
 telethon>=1.14.0
 wikipedia>=1.4.0
 youtube-dl>=2019.9.28
+sqlalchemy>=1.2
