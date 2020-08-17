@@ -13,8 +13,10 @@ from userbot.database.value_sql import get_all_sql
 basicConfig(format='[%(name)s]: %(message)s', level=INFO)
 LOGS = getLogger(__name__)
 
-LOGS.info ("Installing Sql Values Please  Wait.......")
 
+BOTLOG_CHATID = PM_PROTECTOR = BOTLOG = GENIUS_API_TOKEN = OCR_SPACE_API_KEY = REM_BG_API_KEY = LYDIA_API_KEY = PM_MESSAGE = SPAM_PROTECT = BLOCK_MESSAGE = COUNTRY =  CLEAN_WELCOME = AFK_MSG = None 
+
+LOGS.info ("Installing Sql Values Please  Wait.......")
 Sql = get_all_sql()                 
 for i in Sql:  
                if i.sqlvar == "BOTLOG_CHATID":
