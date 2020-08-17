@@ -4,6 +4,7 @@ aiofiles
 aiohttp
 aria2p
 cryptg
+psycopg2-binary
 async_generator
 beautifulsoup4
 bs4
