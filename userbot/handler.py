@@ -60,8 +60,8 @@ def J_Client(**args):
             args["from_users"] = R_SUDO
             args["incoming"] = True   
             del args["sudo"]                
-    if pattern is not None and not pattern.startswith('(?i)'):
-        args['pattern'] = '(?i)' + pattern
+    #if pattern is not None and not pattern.startswith('(?i)'):
+        #args['pattern'] = '(?i)' + pattern
     if "allow_edited" in args:
         del args['allow_edited']
     if "groups_only" in args:
@@ -88,9 +88,9 @@ def J_Client(**args):
             except BaseException:
                 if not disable_errors:                    
                     text = "**I got Crashed recently please Check my error report!**\n"                                                                            
-                    ftext += "\n\nCommand You Tried:\n"
+                    ftext = "\n\nCommand You Tried:\n"
                     ftext += str(check.text)
-                    ftext += "\n\nError text:\n"
+                    ftext += "\n\nError I got:\n"
                     ftext += str(sys.exc_info()[1])
                     ftext += "\n\nDetailed Error:\n"
                     ftext += str(format_exc())  
