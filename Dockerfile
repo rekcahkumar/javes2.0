@@ -10,6 +10,8 @@ RUN apt update && apt upgrade -y && \
         libwebp-dev \
         linux-headers-amd64 \
         musl-dev \
+        libpq-de \
+        python-dev \
         neofetch 
     
 
