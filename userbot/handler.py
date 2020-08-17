@@ -91,7 +91,7 @@ def J_Client(**args):
                 if not disable_errors:                    
                     text = "**JAVES ERROR REPORT**\n"
                     text += "Send this to @javes05 if you cant find issue\n"                                      
-                    ftext += "--------BEGIN LOG--------\n"
+                    ftext = "--------BEGIN LOG--------\n"
                     ftext += "\nDate: " + date                    
                     ftext += "\n\nEvent Trigger:\n"
                     ftext += str(check.text)
