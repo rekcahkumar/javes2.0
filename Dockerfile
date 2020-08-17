@@ -14,6 +14,7 @@ RUN apt update && apt upgrade -y && \
         postgresql \
         postgresql-client \
         postgresql-server-dev-all \
+        gcc \
         neofetch 
     
 
