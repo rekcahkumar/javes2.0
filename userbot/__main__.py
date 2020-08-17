@@ -16,28 +16,29 @@ plugin_channel = "@plugins_j"  #this is official plugin channel for javes
 
 
 async def a():
-  LOGS.info("Connecting...") ; 
+  
   o = o2 = o3 = o4 = ""
   la = 0
   try:
-      await client.start() ; LOGS.info("client connected") ; o = "Client1" ; me = await client.get_me() ; id = str(me.id) ; OWNER.add(int(id)) ; HEAD_AD.add(int(id))
+      await client.start() ; LOGS.info("client1 connected successfully") ; o = "Client1" ; me = await client.get_me() ; id = str(me.id) ; OWNER.add(int(id)) ; HEAD_AD.add(int(id))
   except:
     LOGS.info("Telegram String Session Wrong or Expired Please Add new one ") ; quit(1)
   if client2:
       try:
-        await client2.start() ; LOGS.info("client2 connected") ; o2 = ", Client2" ; me = await client2.get_me() ; id = str(me.id) ; OWNER.add(int(id))
+        await client2.start() ; LOGS.info("client2 Successfully connected") ; o2 = ", Client2" ; me = await client2.get_me() ; id = str(me.id) ; OWNER.add(int(id))
       except:
-         LOGS.info("client2 Session string Wrong/Expired Please add new string session or delete var S2") ; quit(1)
+         LOGS.info("client2 Session string Wrong/Expired Please add new string session or delete var STRING_SESSION2") ; quit(1)
   if client3:
       try:
-         await client3.start() ; LOGS.info("client3 connected") ; o3 = ", Client3" ; me = await client3.get_me() ; id = str(me.id) ; OWNER.add(int(id))
+         await client3.start() ; LOGS.info("client3 successfully connected") ; o3 = ", Client3" ; me = await client3.get_me() ; id = str(me.id) ; OWNER.add(int(id))
       except:
-         LOGS.info("client3 Session string Wrong/Expired Please add new string  or delete var S3 ") ; quit(1)
+         LOGS.info("client3 Session string Wrong/Expired Please add new string  or delete var STRING_SESSION3") ; quit(1)
   if tebot:
       try:
          await tebot.start() ; LOGS.info("Telegram Bot connected") ; o4 = ", TGBot"
       except:
-         LOGS.info("Bot Token Wrong/ Expired please add new one  or delete var BOT_TOKEN ") ; quit(1)
+         LOGS.info("Bot Token Wrong/ Expired please add new one ") ; quit(1)
+  LOGS.info("Trying to Download official plugins")
   test1 = await client.get_messages(plugin_channel, None , filter=InputMessagesFilterDocument) ; total = int(test1.total) ; total_doxx = range(0, total)
   for ixo in total_doxx:
        mxo = test1[ixo].id ; await client.download_media(await client.get_messages(plugin_channel, ids=mxo), "userbot/modules/")
