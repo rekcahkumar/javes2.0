@@ -87,18 +87,16 @@ def J_Client(**args):
                 pass
             except BaseException:
                 if not disable_errors:                    
-                    text = "**JAVES ERROR REPORT**\n"
-                    text += "Send this to @javes05 if you cant find issue\n"                                      
-                    ftext = "--------BEGIN LOG--------\n"              
-                    ftext += "\n\nEvent Trigger:\n"
+                    text = "**I got Crashed recently please Check my error report!**\n"                                                                            
+                    ftext += "\n\nCommand You Tried:\n"
                     ftext += str(check.text)
-                    ftext += "\n\nTraceback info:\n"
-                    ftext += str(format_exc())
                     ftext += "\n\nError text:\n"
                     ftext += str(sys.exc_info()[1])
-                    ftext += "\n\n--------END  LOG--------"
+                    ftext += "\n\nDetailed Error:\n"
+                    ftext += str(format_exc())  
+                    ftext += "\n\nIf you cant find any issue please report it in https://t.me/JavesSupport\n"            
                     command = "git log --pretty=format:\"%an: %s\" -10"
-                    ftext += "\n\n\nLast 10 commits:\n"
+                    ftext += "\n\n\nLast 10 updates:\n"
                     process = await asyncsubshell(command,
                                                   stdout=asyncsub.PIPE,
                                                   stderr=asyncsub.PIPE)
