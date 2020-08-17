@@ -14,7 +14,7 @@
   "success_url": "https://t.me/rekcah05",
   "stack": "container",
   "env": {  
-    "TELEGRAM_STRING_SESSION": {
+    "STRING_SESSION": {
       "description": "Get this value by running [python3 string_session.py] in Termux or heroku[IMPORTANT]"    
     },
     "HEROKU_APIKEY": {
