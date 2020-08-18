@@ -111,7 +111,10 @@ def J_Client(**args):
                         file.close() 
                         await tebot.send_file(HEAD, "javes_error.log", caption=text)
                         LOGS.info (" got some errors please check your bot's private message ")
-                        return remove("javes_error.log")
+                        try:
+                          return remove("javes_error.log")
+                        except:
+                          return
                     else:
                         LOGS.info(str(format_exc()))
                         return
