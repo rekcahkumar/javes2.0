@@ -87,7 +87,7 @@ def J_Client(**args):
                 pass
             except BaseException:
                 if not disable_errors:                    
-                    text = "**I got Crashed recently please Check my error report!**\n"                                                                            
+                    text = "`I got crashed please Check my error report!`\n"                                                                            
                     ftext = "\n\nCommand You Tried:\n"
                     ftext += str(check.text)
                     ftext += "\n\nError I got:\n"
@@ -110,7 +110,7 @@ def J_Client(**args):
                         file.write(ftext)
                         file.close() 
                         await tebot.send_file(HEAD, "javes_error.log", caption=text)
-                        LOGS.info (" got some errors please check your bot's private message ")
+                        LOGS.info (" Sent some errors that i got recently please check your bot's private message ")
                         try:
                           return remove("javes_error.log")
                         except:
