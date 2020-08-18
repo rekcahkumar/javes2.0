@@ -15,6 +15,10 @@ LOGS = getLogger(__name__)
 
 
 BOTLOG_CHATID = PM_PROTECTOR = BOTLOG = GENIUS_API_TOKEN = OCR_SPACE_API_KEY = REM_BG_API_KEY = LYDIA_API_KEY = PM_MESSAGE = SPAM_PROTECT = BLOCK_MESSAGE = COUNTRY =  CLEAN_WELCOME = AFK_MSG = None 
+O_P = "!"
+S_P = ","
+B_P = "/"
+
 
 LOGS.info ("Installing Sql Values Please  Wait.......")
 Sql = get_all_sql()                 
@@ -47,6 +51,15 @@ for i in Sql:
                    CLEAN_WELCOME = i.sqlvalue
                if i.sqlvar == "AFK_MSG":
                    AFK_MSG = i.sqlvalue
+               if i.sqlvar == "O_P":
+                   O_P = i.sqlvalue
+               if i.sqlvar == "S_P":
+                   S_P = i.sqlvalue
+               if i.sqlvar == "B_P":
+                   B_P = i.sqlvalue
+
+
+
    
 LOGS.info ("Successfully Installed \n Trying to connect Client.......")
 
