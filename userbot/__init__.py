@@ -10,7 +10,7 @@ from userbot.database.value_sql import get_all_sql
 
 
 
-basicConfig(format='[%(name)s]: %(message)s', level=INFO)
+basicConfig(format='[Javes]: %(message)s', level=INFO)
 LOGS = getLogger(__name__)
 
 
