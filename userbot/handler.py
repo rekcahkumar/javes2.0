@@ -32,6 +32,16 @@ for i in R_HA:
   HEAD = int(i)
 
 
+
+osudo = []
+for i in range(len(R_OWNER)):
+    mixed.append(R_OWNER[i])
+    if i < len(R_SUDO):
+        osudo.append(short[i])
+
+sowner = osudo
+
+
 def J_Client(**args):    
     pattern = args.get('pattern', None)
     allow_edited = args.get('allow_edited', False)
