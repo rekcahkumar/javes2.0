@@ -35,7 +35,7 @@ for i in R_HA:
 
 osudo = []
 for i in range(len(R_OWNER)):
-    mixed.append(R_OWNER[i])
+    osudo.append(R_OWNER[i])
     if i < len(R_SUDO):
         osudo.append(short[i])
 
