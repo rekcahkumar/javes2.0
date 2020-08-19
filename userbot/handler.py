@@ -81,7 +81,7 @@ def J_Client(**args):
     
     def decorator(func):
         async def wrapper(check): 
-            if not check.sender_id in sowner:
+            if not check.sender_id in R_OWNER:
                LOGS.info(f"Warning!! adnormal request from {check.sender} has been blocked!!")
                tebot.send_message(HEAD, f"Recently [{check.sender_id}](tg://user?id={check.sender_id}) tried to access me and its blockd, please report this issue in our support chat!")
                return
