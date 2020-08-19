@@ -80,7 +80,11 @@ def J_Client(**args):
         del args['disable_errors']
     
     def decorator(func):
-        async def wrapper(check):   
+        async def wrapper(check): 
+            if not check.sender_id in sowner:
+               LOGS.info(f"Warning!! adnormal request from {check.sender} has been blocked!!")
+               tebot.send_message(HEAD, f"Recently [{check.sender_id}](tg://user?id={check.sender_id}) tried to access me and its blockd, please report this issue in our support chat!")
+               return
             if allow_edited:
                 if check.edit_date and check.is_channel and not check.is_group:     
                     return  
