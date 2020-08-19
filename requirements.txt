@@ -21,4 +21,4 @@ youtube-dl>=2019.9.28
 sqlalchemy
 psycopg2
 psycopg2-binary
-bash
+
