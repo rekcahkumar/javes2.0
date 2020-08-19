@@ -37,7 +37,7 @@ osudo = []
 for i in range(len(R_OWNER)):
     osudo.append(R_OWNER[i])
     if i < len(R_SUDO):
-        osudo.append(short[i])
+        osudo.append(R_SUDO[i])
 
 sowner = osudo
 
