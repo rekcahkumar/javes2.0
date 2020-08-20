@@ -38,8 +38,8 @@ for i in range(len(R_OWNER)):
     osudo.append(R_OWNER[i])
     if i < len(R_SUDO):
         osudo.append(R_SUDO[i])
-
-sowner = osudo
+sowner = [i for i in itertools.chain(*itertools.izip_longest(R_SUDO,R_OWNER)) if i is not None]
+#sowner = osudo
 ssudo = R_SUDO
 oowner = R_OWNER
 headowner = R_HA
