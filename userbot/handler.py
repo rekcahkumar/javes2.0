@@ -50,26 +50,22 @@ def J_Client(**args):
     sudo = args.get("sudo", None)
     owner = args.get("owner", None)
     tebot2 = args.get("tgbot", None)
-    if not owner and not sudo:
+    if not owner and not sudo and not tebot:
         return
-    if owner and tebot2:       
-        args["from_users"] = R_OWNER
+    if tebot2:       
+        args["from_users"] = sowner
         args["incoming"] = True
         del args["owner"]
         del args["tgbot"]        
-    elif owner and not tebot2:
+    elif owner:
             args["from_users"] = R_OWNER
             args["outgoing"] = True    
             del args["owner"]         
-    if sudo and tebot2:
+    elif sudo:
         args["from_users"] = R_SUDO
         args["incoming"] = True    
         del args["sudo"]
-        del args["tgbot"]           
-    elif sudo and not tebot2:
-            args["from_users"] = R_SUDO
-            args["incoming"] = True   
-            del args["sudo"]                
+        del args["tgbot"]                             
     if pattern is not None and not pattern.startswith('(?i)'):
         args['pattern'] = '(?i)' + pattern
     if "allow_edited" in args:
