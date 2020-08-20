@@ -33,13 +33,7 @@ for i in R_HA:
 
 
 
-osudo = []
-for i in range(len(R_OWNER)):
-    osudo.append(R_OWNER[i])
-    if i < len(R_SUDO):
-        osudo.append(R_SUDO[i])
-#sowner = [i for i in itertools.chain(*itertools.izip_longest(R_SUDO,R_OWNER)) if i is not None]
-#sowner = osudo
+
 sowner = R_OWNER + R_SUDO
 ssudo = R_SUDO
 oowner = R_OWNER
@@ -84,7 +78,7 @@ def J_Client(**args):
     
     def decorator(func):
         async def wrapper(check): 
-            if not check.sender_id in ssudo and not check.sender_id in oowner:
+            if not check.sender_id in sowner:
                LOGS.info(f"Warning!! adnormal request from {check.sender_id} has been blocked!!")
                file = open("security.log", "w+")
                file.write(f"Adnormal Request has been blocked, Debug Info\n\n{check.sender} \n\n Blocked Access message \n{check.text}")
