@@ -12,10 +12,6 @@ import itertools
 
 
 
-
-
-
-
 tee = {0}
 getsudo = get_all_sudo()                       
 for i in getsudo:    
@@ -30,8 +26,6 @@ del R_SUDO[0]
                     
 for i in R_HA:
   HEAD = int(i)
-
-
 
 
 sowner = R_OWNER + R_SUDO
