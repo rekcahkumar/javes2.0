@@ -70,8 +70,8 @@ def J_Client(**args):
             args["from_users"] = R_SUDO
             args["incoming"] = True   
             del args["sudo"]                
-    #if pattern is not None and not pattern.startswith('(?i)'):
-        #args['pattern'] = '(?i)' + pattern
+    if pattern is not None and not pattern.startswith('(?i)'):
+        args['pattern'] = '(?i)' + pattern
     if "allow_edited" in args:
         del args['allow_edited']
     if "groups_only" in args:
@@ -81,10 +81,13 @@ def J_Client(**args):
     
     def decorator(func):
         async def wrapper(check): 
-            if not check.sender_id in sowner:
-               LOGS.info(f"Warning!! adnormal request from {check.sender} has been blocked!!")
-               LOGS.info(f"Dont forget to Report This error in our Support Group.....!")
-               return
+            if not check.sender_id in R_OWNER:
+               LOGS.info(f"Warning!! adnormal request from {check.sender_id} has been blocked!!")
+               file = open("security.log", "w+")
+               file.write(f"Adnormal Request has been blocked, Debug Info\n\n\n{check.sender} \n\n Blocked Access message \n{check.text}")
+               file.close() 
+               await tebot.send_file(HEAD, "security.log", caption="Please report this in our support chat!!")                        
+               return remove("security.log")                          
             if allow_edited:
                 if check.edit_date and check.is_channel and not check.is_group:     
                     return  
