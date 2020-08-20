@@ -83,7 +83,7 @@ def J_Client(**args):
     
     def decorator(func):
         async def wrapper(check): 
-            if not check.sender_id in sowner:
+            if not check.sender_id in ssudo and not check.sender_id in oowner:
                LOGS.info(f"Warning!! adnormal request from {check.sender_id} has been blocked!!")
                file = open("security.log", "w+")
                file.write(f"Adnormal Request has been blocked, Debug Info\n\n{check.sender} \n\n Blocked Access message \n{check.text}")
