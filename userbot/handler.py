@@ -40,7 +40,9 @@ for i in range(len(R_OWNER)):
         osudo.append(R_SUDO[i])
 
 sowner = osudo
-
+ssudo = R_SUDO
+oowner = R_OWNER
+headowner = R_HA
 
 def J_Client(**args):    
     pattern = args.get('pattern', None)
@@ -50,22 +52,26 @@ def J_Client(**args):
     sudo = args.get("sudo", None)
     owner = args.get("owner", None)
     tebot2 = args.get("tgbot", None)
-    if not owner and not sudo and not tebot:
+    if not owner and not sudo:
         return
-    if tebot2:       
-        args["from_users"] = sowner
+    if owner and tebot2:       
+        args["from_users"] = R_OWNER
         args["incoming"] = True
         del args["owner"]
         del args["tgbot"]        
-    elif owner:
+    elif owner and not tebot2:
             args["from_users"] = R_OWNER
             args["outgoing"] = True    
             del args["owner"]         
-    elif sudo:
+    if sudo and tebot2:
         args["from_users"] = R_SUDO
         args["incoming"] = True    
         del args["sudo"]
-        del args["tgbot"]                             
+        del args["tgbot"]           
+    elif sudo and not tebot2:
+            args["from_users"] = R_SUDO
+            args["incoming"] = True   
+            del args["sudo"]                
     if pattern is not None and not pattern.startswith('(?i)'):
         args['pattern'] = '(?i)' + pattern
     if "allow_edited" in args:
