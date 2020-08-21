@@ -11,7 +11,7 @@ from userbot.database.sudo_sql import get_all_sudo
 import itertools
 
 
-
+#
 tee = {0}
 getsudo = get_all_sudo()                       
 for i in getsudo:    
